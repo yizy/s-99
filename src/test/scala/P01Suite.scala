@@ -1,7 +1,6 @@
 import org.scalatest.FunSuite
 
 class P01Suite extends FunSuite {
-
 	test("list len is equal to 0") {
 		val lst = List()
 		intercept[NoSuchElementException] {P01.last[Int](lst)}
