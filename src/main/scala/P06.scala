@@ -8,5 +8,5 @@
 */
 
 object P06 {
-	def isPalindrome[A](lst: List[A]): Boolean = lst == lst.reverse
+  def isPalindrome[A](lst: List[A]): Boolean = lst == lst.reverse
 }
