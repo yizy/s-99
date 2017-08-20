@@ -15,7 +15,7 @@ object P10 {
   @tailrec
   def encode(lst: List[Any], tmp: List[Any] = Nil, res: List[(Int, Any)] = Nil): List[(Int, Any)] = lst match {
     case h :: tail if tmp.isEmpty || tmp.head == h => encode(tail, h :: tmp, res)
-    case h :: tail => encode(tail, List(h), (tmp.size, tmp.head) :: res)
-    case Nil => ((tmp.size, tmp.head) :: res).reverse
+    case h :: tail                                 => encode(tail, List(h), (tmp.size, tmp.head) :: res)
+    case Nil                                       => ((tmp.size, tmp.head) :: res).reverse
   }
 }
