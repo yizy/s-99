@@ -15,8 +15,8 @@ object P04 {
     case Nil       => 0
   }
 
-	@tailrec
-	def lengthTailRec[A](lst: List[A], n: Int = 0): Int = lst match {
+  @tailrec
+  def lengthTailRec[A](lst: List[A], n: Int = 0): Int = lst match {
     case _ :: tail => lengthTailRec(tail, n + 1)
     case Nil       => n
   }
