@@ -12,13 +12,13 @@
 import scala.annotation.tailrec
 
 object P08 {
-	@tailrec
-	def compressTailRec[A](lst: List[A], res: List[A] = Nil): List[A] = lst match {
-		case h :: tail => compressTailRec(tail.dropWhile(_ == h), h :: res)
-		case Nil 		   => res.reverse
-	}
+  @tailrec
+  def compressTailRec[A](lst: List[A], res: List[A] = Nil): List[A] = lst match {
+    case h :: tail => compressTailRec(tail.dropWhile(_ == h), h :: res)
+    case Nil 		   => res.reverse
+  }
 
-	def compressFunctional[A](lst: List[A]): List[A] = lst.foldRight(List[A]()) { case (h, res) =>
-		if (res.isEmpty || res.head != h) h :: res else res
-	}
+  def compressFunctional[A](lst: List[A]): List[A] = lst.foldRight(List[A]()) { case (h, res) =>
+    if (res.isEmpty || res.head != h) h :: res else res
+  }
 }
