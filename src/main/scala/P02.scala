@@ -9,8 +9,8 @@
 
 object P02 {
 	def penultimate[A](lst: List[A]): A = lst match {
-		case h::_::Nil => h
-		case _::tail   => penultimate(tail)
-		case _         => throw new NoSuchElementException
+		case h :: _ :: Nil => h
+		case _ :: tail     => penultimate(tail)
+		case _             => throw new NoSuchElementException
 	}
 }
