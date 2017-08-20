@@ -10,16 +10,16 @@
 import scala.annotation.tailrec
 
 object P05 {
-	def reverseSimple[A](lst: List[A]): List[A] = lst match {
-		case h::tail => reverseSimple(tail) ::: List(h)
-		case Nil => Nil
-	}
+  def reverseSimple[A](lst: List[A]): List[A] = lst match {
+    case h :: tail => reverseSimple(tail) ::: List(h)
+    case Nil       => Nil
+  }
 
-	@tailrec
-	def reverseTailRec[A](lst: List[A], res: List[A] = Nil): List[A] = lst match {
-		case h::tail => reverseTailRec(tail, h :: res)
-		case Nil => res
-	}
-
-	def reverseByFold[A](lst: List[A]): List[A] = lst.foldLeft(List[A]()) { (b, a) => a :: b}
+  @tailrec
+  def reverseTailRec[A](lst: List[A], res: List[A] = Nil): List[A] = lst match {
+    case h :: tail => reverseTailRec(tail, h :: res)
+    case Nil       => res
+  }
+  
+  def reverseByFold[A](lst: List[A]): List[A] = lst.foldLeft(List[A]()) { (b, a) => a :: b}
 }
