@@ -7,8 +7,6 @@
   http://aperiodic.net/phil/scala/s-99/p06.scala
 */
 
-import scala.annotation.tailrec
-
 object P06 {
 	def isPalindrome[A](lst: List[A]): Boolean = lst == lst.reverse
 }
