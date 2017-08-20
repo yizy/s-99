@@ -21,5 +21,5 @@ object P04 {
     case Nil       => n
   }
 
-	def lengthByFold[A](lst: List[A]): Int = lst.foldLeft(0) { (b, _) => b + 1}
+  def lengthByFold[A](lst: List[A]): Int = lst.foldLeft(0) { (b, _) => b + 1}
 }
