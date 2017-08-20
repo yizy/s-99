@@ -15,7 +15,7 @@ object P09 {
   @tailrec
   def pack(lst: List[Any], tmp: List[Any] = Nil, res: List[Any] = Nil): List[Any] = lst match {
     case h :: tail if tmp.isEmpty || tmp.head == h => pack(tail, h :: tmp, res)
-    case h :: tail => pack(tail, List(h), tmp :: res)
-    case Nil => (tmp :: res).reverse
+    case h :: tail                                 => pack(tail, List(h), tmp :: res)
+    case Nil                                       => (tmp :: res).reverse
   }
 }
