@@ -8,14 +8,14 @@
 */
 
 object P07 {
-	def flattenSimple(lst: List[Any]): List[Any] = lst match {
-		case (l: List[_]) :: tail => flattenSimple(l) ::: flattenSimple(tail)
-		case h :: tail   	  			=> h :: flattenSimple(tail)
-		case Nil 									=> Nil
-	}
+  def flattenSimple(lst: List[Any]): List[Any] = lst match {
+    case (l: List[_]) :: tail => flattenSimple(l) ::: flattenSimple(tail)
+    case h :: tail   	  			=> h :: flattenSimple(tail)
+    case Nil 									=> Nil
+  }
 
-	def flattenByFlatMap(lst: List[Any]): List[Any] = lst.flatMap {
-		case l: List[_] => flattenByFlatMap(l)
-		case e 					=> List(e)
-	}
+  def flattenByFlatMap(lst: List[Any]): List[Any] = lst.flatMap {
+    case l: List[_] => flattenByFlatMap(l)
+    case e 					=> List(e)
+  }
 }
