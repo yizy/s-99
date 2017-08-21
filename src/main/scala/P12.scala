@@ -9,8 +9,6 @@
   http://aperiodic.net/phil/scala/s-99/p12.scala
  */
 
-import scala.annotation.tailrec
-
 object P12 {
   def decode(lst: List[(Int, Any)]): List[Any] = 
     lst.flatMap { case (n, e) => List.fill(n)(e) }
