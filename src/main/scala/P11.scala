@@ -12,14 +12,14 @@
 import scala.annotation.tailrec
 
 object P11 {
-	@tailrec
+  @tailrec
   def encodeModified(lst: List[Any], tmp: List[Any] = Nil, res: List[Any] = Nil): List[Any] = lst match {
     case h :: tail if tmp.isEmpty || tmp.head == h => encodeModified(tail, h :: tmp, res)
     case h :: tail =>
       val head = if (tmp.size == 1) tmp.head else (tmp.size, tmp.head)
-			encodeModified(tail, List(h),  head :: res)
+      encodeModified(tail, List(h),  head :: res)
     case Nil => 
       val head = if (tmp.size == 1) tmp.head else (tmp.size, tmp.head)
-			(head :: res).reverse
+      (head :: res).reverse
   }
 }
